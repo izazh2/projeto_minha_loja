@@ -16,6 +16,7 @@
     --cor_lnk_menu:  ;
     --cor_vermelha: red ;
     --cor_suave: ;
+    --cor_branca: ;
 }
 
 /*CONFIGURANDO A TAG main*/
@@ -29,10 +30,10 @@
     width: 100%;
     height: 200px;
     background-color: var(--cor_principal);
-    padding: 5px;
+    padding: 5px 100px;
     margin: 20px 0px;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
 }
 
@@ -67,28 +68,28 @@
 
 /*FORMATANDO OS MENUS*/
 #menu a:link{
-    font-size: 1.3em;
+    font-size: 2.3em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--cor_lnk_menu);
 }
 
 #menu a:visited{
-    font-size: 1.3em;
+    font-size: 2.4em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--cor_lnk_menu);
 }
 
 #menu a:hover{
-    font-size: 1.3em;
+    font-size: 2.4em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--cor_botao01);
 }
 
 #menu a:active{
-    font-size: 1.3em;
+    font-size: 2.4em;
     text-transform: uppercase;
     text-decoration: none;
     color: var(--cor_vermelha);
@@ -114,7 +115,6 @@
 }
 
 #cards{
-    background-color: aqua;
     width: 1000px;
     min-height: 600px;
     margin: 20px 0px;
@@ -160,6 +160,36 @@
     text-transform: uppercase;
     letter-spacing: 5px;
     border: none;
+    background-color: var(--cor_suave);
+    cursor: pointer;
 }
 
 /*FORMATAÇÃO DO RODAPÉ*/
+#rodape{
+    width: 100%;
+    height: 300px;
+    background-color: var(--cor_suave);
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+
+#dadosloja{
+    font-size: 0.8em;
+}
+
+#icones-socias ul{
+    list-style: none;
+}
+
+#icones-sociais img{
+    width: 25px;
+    height: 25px;
+    margin-left: 50px;
+}
+
+#div-cartoes img{
+    width: 25px;
+    height: 25px;
+}
+
