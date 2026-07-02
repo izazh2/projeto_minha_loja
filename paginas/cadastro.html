@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê odé</title>
+
+    <!--Faça seu comentário-->
+    <!--LINK PARA ADICIONAE O FAVICON-->
+    <link rel="shortcut icon" href="../imagem/icones/favicon.ico" type="imagem/x-icon">
+
+    <!--LINK PARA O ARQUIVO-->
+    <link rel="stylesheet" href="css/style_estrutura_paginas.css">
+</head>
+<body>
+    <main id="geral">
+        <header id="cabecalho">
+            <div id="logo">
+                <a href="index.html">
+                    <img src="imagem/icones/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="index.html" class="lnk_menu">Home</a></li>
+                    <li><a href="paginas/cadastro.html" class="lnk_menu">Cadastro</a></li>
+                    <li><a href="paginas/sobre.html" class="lnk_menu">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <div id="div-icones">
+              <ul>
+                <li><a href="/paginas/login.html" class="lnk-icone"><img src="imagem/icones/login.png" alt=""></a></li>
+                <li><a href="/paginas/carrinho.html" class="lnk-icone"><img src="imagem/icones/carrinho.png" alt=""></a></li>
+              </ul>  
+            </div>
+        </header>
+
+        <section id="pesquisa">
+            <input type="text" name="pesquisa" id="pesquisa" placeholder="Digite seu produto">
+        </section>
+        
+       <section id="form">
+        <h3>Cadastro</h3>
+
+        <form id="form-pessoa">
+            <label for="nome">Nome</label>
+            <input type="text" name="nome" id="nome" class="input01" required maxlength="60" placeholder="Digite Seu nome">
+
+            <label for="cpf">CPF</label>
+            <input type="text" name="cpf" id="cpf" class="input02" required maxlength="14" placeholder="Digite Seu CPF">
+
+            <label for="data-nascimento">Data Nascimento</label>
+            <input type="date" name="data-nascimento" id="data-nascimento" class="input01" required>
+
+            <label for="sexo">Sexo</label>
+            <input type="radio" name="sexo" id="sexoM" class="inputOP" value="M"> Masculino
+            <input type="radio" name="sexo" id="sexoF" class="inputOP" value="F"> Feminino
+            <input type="radio" name="sexo" id="sexoN" class="inputOP" value="N"> Não Declarar
+
+            <label for="cep">CEP</label>
+            <input type="text" name="cep" id="cep" class="input02" required maxlength="9" placeholder="Digite seu CEP">
+
+            <div id="div-dados-endereco" class="oculto">
+                <label for="logradouro">Logradouro</label>
+                <input type="text" name="logradouro" id="logradouro"  class="input01">
+
+                <label for="num-residencia">numero</label>
+                <input type="text" name="num-residencia" id="num-residencia"  class="input01">
+
+                <label for="complemente-end">Complemento</label>
+                <input type="text" name="complemente-end" id="complemente-end"  class="input01">
+
+                <label for="bairro">Bairro</label>
+                <input type="text" name="bairro" id="bairro" class="input01">
+
+                <label for="localidade">Localidade</label>
+                <input type="text" name="localidade" id="localidade"  class="input01">
+
+                <label for="uf">Unidade Federativa</label>
+                <input type="text" name="uf" id="uf"  class="input01">
+            </div>
+
+            <label for="senha">Senha</label>
+            <input type="password" name="senha" id="senha" class="input02" required maxlength="6" placeholder="Informe sua senha">
+
+            <button type="submit" id="btn-add">Cadastrar</button>
+            <button type="reset" id="btn-limpar">Limpar</button>
+        </form>
+       </section>
+
+        <footer id="rodape">
+            <div id="dadosloja">
+                <h2>Rua sei la das quantas, 1001 - Centro</h2>
+                <h1>Aracaju - Sergipe</h1>
+            </div>
+
+            <div id="icones_sociais">
+                <ul>
+                    <li><a href="https://www.instagram.com/seu_usario"><img src="imagem/icones/instagram.png" alt=""></a></li>
+                    <li><a href="https://www.facebook.com/seu_usario"><img src="imagem/icones/instagram.png" alt=""></a></li>
+                </ul>
+            </div>
+
+            <div id="div-cartoes">
+                <img src="imagem/icones/hipercard.png" alt="Visa">
+                <img src="imagem/icones/visa.png" alt="Visa">
+                <img src="imagem/icones/master_card.png" alt="Mastercard">
+            </div>
+        </footer>
+
+    </main>
+</body>
+</html>
