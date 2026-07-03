@@ -1,0 +1,124 @@
+@import url(style_estrutura_paginas.css);
+
+/*FUNDO SUAVE ATRÁS DO CARD, SÓ NESTA PÁGINA*/
+body{
+    background-color: #f2f2f2;
+}
+
+/*CARD DA SECTION CARRINHO*/
+#carrinho{
+    width: 900px;
+    max-width: 100%;
+    min-height: 300px;
+    margin: 40px auto;
+    background-color: var(--cor_branca);
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0px 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+/*BARRA DE TÍTULO COLORIDA NO TOPO DO CARD*/
+#carrinho h3{
+    background-color: var(--cor_principal);
+    color: var(--cor_branca);
+    text-align: center;
+    text-transform: uppercase;
+    letter-spacing: 4px;
+    padding: 22px 20px;
+    margin: 0px;
+    font-size: 1.3em;
+}
+
+/*LISTA DE ITENS*/
+.item-carrinho{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 18px 45px;
+}
+
+.item-carrinho img{
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 6px;
+}
+
+.item-carrinho .nome-item{
+    flex: 1;
+    margin-left: 20px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #333;
+}
+
+.item-carrinho .qtd-item{
+    width: 60px;
+    text-align: center;
+    padding: 5px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.item-carrinho .valor-item{
+    width: 120px;
+    text-align: right;
+    font-weight: bold;
+    color: var(--cor_botao01);
+}
+
+/*RESUMO / TOTAL*/
+#resumo-carrinho{
+    width: 100%;
+    padding: 25px 45px;
+    background-color: var(--cor_suave);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+#resumo-carrinho h3{
+    background: none;
+    color: #333;
+    padding: 0px;
+    margin: 0px;
+    text-transform: none;
+    letter-spacing: normal;
+    font-size: 1.2em;
+}
+
+#resumo-carrinho button{
+    height: 45px;
+    border: none;
+    border-radius: 4px;
+    background-color: var(--cor_botao01);
+    color: var(--cor_branca);
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    cursor: pointer;
+}
+
+#resumo-carrinho button:hover{
+    opacity: 0.9;
+}
+
+/*ESTADO DE CARRINHO VAZIO*/
+#carrinho-vazio{
+    text-align: center;
+    padding: 60px 45px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    color: #666;
+}
+
+#carrinho-vazio a{
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--cor_botao01);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: bold;
+}
