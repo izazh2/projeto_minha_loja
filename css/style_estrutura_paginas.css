@@ -11,12 +11,12 @@
 
 /*CRIANDO VARIAVEIS*/
 :root{
-    --cor_principal: rgb(79, 150, 79);
+    --cor_principal:#5eb674;
     --cor_botao01: rgb(128, 0, 75);
     --cor_lnk_menu: #2b2b2b;
     --cor_vermelha: red ;
-    --cor_suave: #f2f2f2;
-    --cor_branca: #ffffff;
+    --cor_suave: #5eb674;
+    --cor_branca: #ffff;
 }
 
 /*CONFIGURANDO A TAG main*/
@@ -45,8 +45,7 @@
 
 /*CONFIGURANDO A TAG NAV POR MEIO DO SEU ID*/
 #menu{
-    background-color: aliceblue;
-    width: 750px;
+    background-color: var(--cor_principal);
     height: 200px;
     display: flex;
     align-items: center;
