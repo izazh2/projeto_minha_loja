@@ -10,7 +10,8 @@
     <link rel="shortcut icon" href="../imagem/icones/favicon.ico" type="imagem/x-icon">
 
     <!--LINK PARA O ARQUIVO-->
-    <link rel="stylesheet" href="css/style_estrutura_paginas.css">
+    <link rel="stylesheet" href="../css/style_estrutura_paginas.css">
+    <link rel="stylesheet" href="../css/style.formulario.css">
 </head>
 <body>
     <main id="geral">
@@ -31,7 +32,7 @@
 
             <div id="div-icones">
               <ul>
-                <li><a href="/paginas/login.html" class="lnk-icone"><img src="imagem/icones/login.png" alt=""></a></li>
+                <li><a href="../paginas/login.html" class="lnk-icone"><img src="../imagem/icones/login.png" alt=""></a></li>
                 <li><a href="/paginas/carrinho.html" class="lnk-icone"><img src="imagem/icones/carrinho.png" alt=""></a></li>
               </ul>  
             </div>
@@ -66,11 +67,11 @@
                 <label for="logradouro">Logradouro</label>
                 <input type="text" name="logradouro" id="logradouro"  class="input01">
 
-                <label for="num-residencia">numero</label>
-                <input type="text" name="num-residencia" id="num-residencia"  class="input01">
+                <label for="num-residencia">Número</label>
+                <input type="text" name="num-residencia" id="num-residencia"  class="input01" maxlength="10" placeholder="Digite o número da residencia">
 
                 <label for="complemente-end">Complemento</label>
-                <input type="text" name="complemente-end" id="complemente-end"  class="input01">
+                <input type="text" name="complemente-end" id="complemente-end"  class="input01" maxlength="100">
 
                 <label for="bairro">Bairro</label>
                 <input type="text" name="bairro" id="bairro" class="input01">
@@ -85,8 +86,11 @@
             <label for="senha">Senha</label>
             <input type="password" name="senha" id="senha" class="input02" required maxlength="6" placeholder="Informe sua senha">
 
-            <button type="submit" id="btn-add">Cadastrar</button>
-            <button type="reset" id="btn-limpar">Limpar</button>
+            <div id="div-btns">
+              <button type="submit" id="btn-add">Cadastrar</button>
+              <button type="reset" id="btn-limpar">Limpar</button>
+            </div>
+
         </form>
        </section>
 
