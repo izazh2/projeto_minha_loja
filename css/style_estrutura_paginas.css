@@ -13,10 +13,10 @@
 :root{
     --cor_principal: rgb(79, 150, 79);
     --cor_botao01: rgb(128, 0, 75);
-    --cor_lnk_menu:  ;
+    --cor_lnk_menu: #2b2b2b;
     --cor_vermelha: red ;
-    --cor_suave: ;
-    --cor_branca: ;
+    --cor_suave: #f2f2f2;
+    --cor_branca: #ffffff;
 }
 
 /*CONFIGURANDO A TAG main*/
@@ -178,11 +178,12 @@
     font-size: 0.8em;
 }
 
-#icones-socias ul{
+#icones_sociais ul{
     list-style: none;
+    display: flex;
 }
 
-#icones-sociais img{
+#icones_sociais img{
     width: 25px;
     height: 25px;
     margin-left: 50px;
@@ -192,4 +193,3 @@
     width: 25px;
     height: 25px;
 }
-
