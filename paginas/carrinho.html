@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ateliê odé - Carrinho</title>
+
+    <!--LINK PARA ADICIONAE O FAVICON-->
+    <link rel="shortcut icon" href="../imagem/icones/favicon.ico" type="imagem/x-icon">
+
+    <!--LINK PARA O ARQUIVO-->
+    <link rel="stylesheet" href="../css/style_carrinho.css">
+</head>
+<body>
+    <main id="geral">
+        <header id="cabecalho">
+            <div id="logo">
+                <a href="../index.html">
+                    <img src="../imagem/icones/logo.png" alt="logo">
+                </a>
+            </div>
+
+            <nav id="menu">
+                <ul>
+                    <li><a href="../index.html" class="lnk_menu">Home</a></li>
+                    <li><a href="cadastro.html" class="lnk_menu">Cadastro</a></li>
+                    <li><a href="sobre.html" class="lnk_menu">Sobre</a></li>
+                </ul>
+            </nav>
+
+            <div id="div-icones">
+              <ul>
+                <li><a href="login.html" class="lnk-icone"><img src="../imagem/icones/login.png" alt="Login"></a></li>
+                <li><a href="carrinho.html" class="lnk-icone"><img src="../imagem/icones/carrinho.png" alt="Carrinho"></a></li>
+              </ul>
+            </div>
+        </header>
+
+        <section id="carrinho">
+            <h3>Meu Carrinho</h3>
+
+            <!-- Exemplo de item no carrinho. Duplique este bloco .item-carrinho para cada produto adicionado. -->
+            <div class="item-carrinho">
+                <img src="../imagem/imagem01.jpg" alt="Roupa Navalha">
+                <span class="nome-item">Roupa Navalha</span>
+                <input type="number" class="qtd-item" value="1" min="1">
+                <span class="valor-item">R$ 500,00</span>
+            </div>
+
+            <div id="resumo-carrinho">
+                <h3>Total: R$ 500,00</h3>
+                <button class="btn-card" id="btn-finalizar" style="width:220px;">Finalizar Compra</button>
+            </div>
+
+            <!--
+                Estado de carrinho vazio (descomente e remova os itens acima quando não houver produtos):
+                <div id="carrinho-vazio">
+                    Seu carrinho está vazio.
+                    <br>
+                    <a href="../index.html">Voltar para a loja</a>
+                </div>
+            -->
+        </section>
+
+        <footer id="rodape">
+            <div id="dadosloja">
+                <h2>Rua sei la das quantas, 1001 - Centro</h2>
+                <h1>Aracaju - Sergipe</h1>
+            </div>
+
+            <div id="icones_sociais">
+                <ul>
+                    <li><a href="https://www.instagram.com/seu_usario"><img src="../imagem/icones/instagram.png" alt="Instagram"></a></li>
+                    <li><a href="https://www.x.com/seu_usario"><img src="../imagem/icones/x.png" alt="X"></a></li>
+                </ul>
+            </div>
+
+            <div id="div-cartoes">
+                <img src="../imagem/icones/hipercard.png" alt="Hipercard">
+                <img src="../imagem/icones/visa.png" alt="Visa">
+                <img src="../imagem/icones/master_card.png" alt="Mastercard">
+            </div>
+        </footer>
+
+    </main>
+</body>
+</html>
