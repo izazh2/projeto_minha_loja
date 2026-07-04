@@ -9,6 +9,7 @@
     <link rel="shortcut icon" href="../imagem/icones/favicon.ico" type="imagem/x-icon">
 
     <!--LINK PARA O ARQUIVO-->
+    <link rel="stylesheet" href="../css/style_estrutura_paginas.css">
     <link rel="stylesheet" href="../css/style_carrinho.css">
 </head>
 <body>
@@ -36,30 +37,82 @@
             </div>
         </header>
 
-        <section id="carrinho">
-            <h3>Meu Carrinho</h3>
+        <section id="carrinho-topo">
+            <h3>Carrinho de Compras</h3>
+        </section>
 
-            <!-- Exemplo de item no carrinho. Duplique este bloco .item-carrinho para cada produto adicionado. -->
-            <div class="item-carrinho">
-                <img src="../imagem/imagem01.jpg" alt="Roupa Navalha">
-                <span class="nome-item">Roupa Navalha</span>
-                <input type="number" class="qtd-item" value="1" min="1">
-                <span class="valor-item">R$ 500,00</span>
-            </div>
+        <section id="carrinho-conteudo">
+            <div id="lista-itens">
 
-            <div id="resumo-carrinho">
-                <h3>Total: R$ 500,00</h3>
-                <button class="btn-card" id="btn-finalizar" style="width:220px;">Finalizar Compra</button>
-            </div>
-
-            <!--
-                Estado de carrinho vazio (descomente e remova os itens acima quando não houver produtos):
-                <div id="carrinho-vazio">
-                    Seu carrinho está vazio.
-                    <br>
-                    <a href="../index.html">Voltar para a loja</a>
+                <div class="item-carrinho">
+                    <img src="../imagem/imagem01.jpg" alt="Roupa Navalha">
+                    <div class="item-info">
+                        <h4 class="item-nome">Roupa Navalha</h4>
+                        <p class="item-preco-unit">R$ 500,00 / unid.</p>
+                    </div>
+                    <div class="qtd-control">
+                        <button type="button" class="btn-qtd btn-menos">-</button>
+                        <input type="number" class="qtd-item" value="1" min="1">
+                        <button type="button" class="btn-qtd btn-mais">+</button>
+                    </div>
+                    <span class="valor-item">R$ 500,00</span>
+                    <button type="button" class="btn-remover" title="Remover item">✕</button>
                 </div>
-            -->
+
+                <div class="item-carrinho">
+                    <img src="../imagem/imagem04.jpg" alt="Colar de Contas">
+                    <div class="item-info">
+                        <h4 class="item-nome">Colar de Contas</h4>
+                        <p class="item-preco-unit">R$ 350,00 / unid.</p>
+                    </div>
+                    <div class="qtd-control">
+                        <button type="button" class="btn-qtd btn-menos">-</button>
+                        <input type="number" class="qtd-item" value="1" min="1">
+                        <button type="button" class="btn-qtd btn-mais">+</button>
+                    </div>
+                    <span class="valor-item">R$ 350,00</span>
+                    <button type="button" class="btn-remover" title="Remover item">✕</button>
+                </div>
+
+                <div class="item-carrinho">
+                    <img src="../imagem/imagem05.jpg" alt="Torso / Fita">
+                    <div class="item-info">
+                        <h4 class="item-nome">Torso / Fita</h4>
+                        <p class="item-preco-unit">R$ 220,00 / unid.</p>
+                    </div>
+                    <div class="qtd-control">
+                        <button type="button" class="btn-qtd btn-menos">-</button>
+                        <input type="number" class="qtd-item" value="1" min="1">
+                        <button type="button" class="btn-qtd btn-mais">+</button>
+                    </div>
+                    <span class="valor-item">R$ 220,00</span>
+                    <button type="button" class="btn-remover" title="Remover item">✕</button>
+                </div>
+
+            </div>
+
+            <aside id="resumo-carrinho">
+                <label for="cep">CEP</label>
+                <input type="text" id="cep" name="cep" placeholder="Digite o CEP">
+
+                <div class="resumo-linha valor-total-box">
+                    <span>VALOR TOTAL</span>
+                    <strong>R$ 1.070,00</strong>
+                </div>
+
+                <div class="resumo-linha valor-frete-box">
+                    <span>VALOR FRETE</span>
+                    <strong>R$ 25,00</strong>
+                </div>
+
+                <div class="resumo-linha total-pagar-box">
+                    <span>TOTAL A PAGAR</span>
+                    <strong>R$ 1.095,00</strong>
+                </div>
+
+                <button type="button" id="btn-continuar">Continuar Compra</button>
+                <button type="button" id="btn-finalizar">Finalizar Compra</button>
+            </aside>
         </section>
 
         <footer id="rodape">
