@@ -11,9 +11,9 @@
 
 /*CRIANDO VARIAVEIS*/
 :root{
-    --cor_principal:#5eb674;
+    --cor_principal: #5eb674;
     --cor_botao01: rgb(128, 0, 75);
-    --cor_lnk_menu: #2b2b2b;
+    --cor_lnk_menu: #e6e6e6;
     --cor_vermelha: red ;
     --cor_suave: #5eb674;
     --cor_branca: #ffff;
