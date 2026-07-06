@@ -1,3 +1,4 @@
+
 import { produtos } from "./produtos";
 
 //PEGANDO ELEMENTO DO DOM
@@ -19,12 +20,17 @@ const listaProdutos = () =>{
         const h2Titulo = document.createElement('h2')
         h2Titulo.innerHTML = elem.descricao_produto
 
-        const divValor = document.createElement('div')
-        divValor.setAttribute('class', 'valor_card')
-        divValor.innerHTML `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.','.')}`
+        const h3Valor = document.createElement('div')
+        h3Valor.setAttribute('class', 'valor_card')
+        h3Valor.innerHTML `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.','.')}`
 
         const btnCard = document.createElement('button')
         btnCard.setAttribute('class', 'btn_card')
-        btnCard.innerHTML
+        btnCard.innerHTML = `Adicionar`
+
+        divCard.appendChild(imgProduto)
+        divCard.appendChild(h2Titulo)
+        divCard.appendChild(h3Valor)
+        divCard.appendChild(btnCard)
     })
 }
