@@ -1,4 +1,4 @@
-import { produtos } from "./profutos";
+import { produtos } from "./produtos";
 
 //PEGANDO ELEMENTO DO DOM
 const section_cards = document.querySelector(cards)
