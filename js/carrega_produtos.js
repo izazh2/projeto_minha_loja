@@ -2,7 +2,7 @@
 import { produtos } from "./produtos";
 
 //PEGANDO ELEMENTO DO DOM
-const section_cards = document.querySelector(cards)
+const section_cards = document.querySelector('#cards')
 
 //FUNÇÃO PARA CARREGAR  OS PRODUTOS  
 const listaProdutos = () =>{
@@ -32,5 +32,9 @@ const listaProdutos = () =>{
         divCard.appendChild(h2Titulo)
         divCard.appendChild(h3Valor)
         divCard.appendChild(btnCard)
+
+        selection_cards.appendChild(divCard)
     })
 }
+
+listarProdutos()
