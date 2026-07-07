@@ -7,6 +7,7 @@ const produtos = [
         id_secao: 1,
         nome_secao: "Roupas Catiços"
     },
+    
     {
         id_produto: 2,
         descricao_produto: "Roupa de Iemanja",
@@ -15,6 +16,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 3,
         descricao_produto: "Baina",
@@ -23,6 +25,7 @@ const produtos = [
         id_secao: 3,
         nome_secao: "Roupas Femininas"
     },
+
     {
         id_produto: 4,
         descricao_produto: "Roupa Oxala",
@@ -31,6 +34,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 5,
         descricao_produto: "Roupa de Oxum",
@@ -39,6 +43,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 6,
         descricao_produto: "Roupa de Xangô",
@@ -47,6 +52,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 7,
         descricao_produto: "Roupa de Odé",
@@ -55,6 +61,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 8,
         descricao_produto: "Roupa de iansã",
@@ -63,6 +70,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 9,
         descricao_produto: "Roupa de Ogum",
@@ -71,6 +79,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 10,
         descricao_produto: "Roupa de iemanja",
@@ -79,6 +88,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 11,
         descricao_produto: "Roupa de Oba",
@@ -87,6 +97,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 12,
         descricao_produto: "Roupa de Oxala 2",
@@ -95,6 +106,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 13,
         descricao_produto: "Roupa de Xangô",
@@ -103,6 +115,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 14,
         descricao_produto: "Roupa Onira",
@@ -111,6 +124,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 15,
         descricao_produto: "Roupa de Oxala 3",
@@ -119,6 +133,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas de Santo"
     },
+
     {
         id_produto: 16,
         descricao_produto: "Camisa Branca Tradicional",
@@ -127,6 +142,7 @@ const produtos = [
         id_secao: 2,
         nome_secao: "Roupas Masculinas"
     },
+
     {
         id_produto: 17,
         descricao_produto: "Saia de Algodão Branca",
@@ -135,6 +151,7 @@ const produtos = [
         id_secao: 1,
         nome_secao: "Roupas Femininas"
     },
+
     {
         id_produto: 18,
         descricao_produto: "Guia Verde e Branca",
@@ -143,6 +160,7 @@ const produtos = [
         id_secao: 3,
         nome_secao: "Guias e Fios"
     },
+
     {
         id_produto: 19,
         descricao_produto: "Brajá Tradicional",
@@ -151,6 +169,7 @@ const produtos = [
         id_secao: 3,
         nome_secao: "Guias e Fios"
     },
+
     {
         id_produto: 20,
         descricao_produto: "Leque Branco Rendado",
