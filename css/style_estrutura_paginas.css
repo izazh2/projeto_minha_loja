@@ -192,3 +192,32 @@
     width: 25px;
     height: 25px;
 }
+
+/*FORMATANDO O MENU DE SEÇÕES (LADO A LADO)*/
+#nav-secoes{
+    width: 100%;
+    background-color: var(--cor_branca);
+    padding: 15px 0px;
+}
+
+#nav-secoes ul{
+    list-style: none;
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap;
+    gap: 35px;
+}
+
+#nav-secoes a{
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: bold;
+    font-size: 0.95em;
+    color: var(--cor_lnk_menu);
+    cursor: pointer;
+}
+
+#nav-secoes a:hover{
+    color: var(--cor_botao01);
+}
