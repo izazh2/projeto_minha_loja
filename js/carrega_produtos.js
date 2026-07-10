@@ -4,24 +4,6 @@ import { produtos } from "./produtos.js";
 //PEGANDO ELEMENTO DO DOM
 const section_cards = document.querySelector('#cards')
 
-//CARREGA 
-const carregaProduto = (id_secao) => {
-    //AO CHAMAR A FUNÇÃO carregaProduto() DEVE PASSAR O PARÂMETRO. 0(ZERO) CHAMA A FUNÇÃO listarProdutos(), QUALQUER OUTRO VALOR CHAMA A FUNLÇAO produtosFiltrados(id_secao)
-    if (id_secao === 0) {
-        montandoCards(listarProdutos())
-    } else {
-        montandoCards(produtosFiltrados(id_secao))
-    }
-
-    //QUALQUER FUNÇÃO CHAMADA SEMPRE CHAMA A FUNÇÃO montarSecoes()
-    montarSecoes()
-}
-
-//FUNÇÃO PARA CARREGAR OS PRODUTOS
-const listarProdutos = () => {
-    return produtos
-}
-
 //FILTRANDO AS SEÇÕES COM A COLEÇÃO map
 const listarSecoes = () => {
     //CRIANDO A COLEÇÃO MAP
@@ -47,6 +29,18 @@ const montarSecoes = () => {
     const ulMenu = document.querySelector('#menu-secoes')
     //LIMPANDO O ELEMENTO ulMenu
     ulMenu.innerHTML = ''
+
+    //CRIANDO O LINK "TODOS" QUE MOSTRA O CATÁLOGO INTEIRO
+    const liTodos = document.createElement('li')
+    const aTodos = document.createElement('a')
+    aTodos.setAttribute('href', '#')
+    aTodos.setAttribute('class', 'lnk-secao')
+    aTodos.innerHTML = 'Todos'
+    aTodos.addEventListener('click', () => {
+        montandoCards(produtos)
+    })
+    liTodos.appendChild(aTodos)
+    ulMenu.appendChild(liTodos)
 
     //PERCORRENDO O ARRAY DAS SEÇÕES FILTRADA
     listarSecoes().forEach((elem, i) => {
@@ -74,8 +68,6 @@ const montarSecoes = () => {
 
 }
 
-montarSecoes()
-
 //FILTRANDO PRODUTOS 
 const produtosFiltrados = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao)
@@ -95,6 +87,7 @@ const montandoCards = (objProdutos) => {
         imgProduto.setAttribute('class', 'img_card')
 
         const h2Titulo = document.createElement('h2')
+        h2Titulo.setAttribute('class', 'tito_card')
         h2Titulo.innerHTML = elem.descricao_produto
 
         const h3Valor = document.createElement('h3')
@@ -102,7 +95,7 @@ const montandoCards = (objProdutos) => {
         h3Valor.innerHTML = `R$ ${parseFloat(elem.valor_unitario).toFixed(2).replace('.', ',')}`
 
         const btnCard = document.createElement('button')
-        btnCard.setAttribute('class', 'btn_card')
+        btnCard.setAttribute('class', 'btn-card')
         btnCard.innerHTML = 'Adicionar'
 
         divCard.appendChild(imgProduto)
@@ -116,4 +109,6 @@ const montandoCards = (objProdutos) => {
 
 }
 
-montandoCards(produtos);
+//INICIALIZANDO A PÁGINA
+montarSecoes()
+montandoCards(produtos)
