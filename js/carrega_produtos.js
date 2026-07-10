@@ -1,35 +1,62 @@
 //IMPORTANDO O ARRAY DOS PRODUTOS
 import { produtos } from "./produtos.js";
 
+//CHAVE USADA NO localStorage
+const CHAVE_CARRINHO = 'carrinho_atelie_ode';
+
 //PEGANDO ELEMENTO DO DOM
 const section_cards = document.querySelector('#cards')
 
+//LENDO O CARRINHO ATUAL DO localStorage
+const obterCarrinho = () => {
+    return JSON.parse(localStorage.getItem(CHAVE_CARRINHO)) || [];
+}
+
+//SALVANDO O CARRINHO NO localStorage
+const salvarCarrinho = (carrinho) => {
+    localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(carrinho));
+}
+
+//ADICIONANDO UM PRODUTO AO CARRINHO (OU SOMANDO 1 SE JÁ EXISTIR)
+const adicionarAoCarrinho = (produto) => {
+    const carrinho = obterCarrinho();
+
+    const itemExistente = carrinho.find((item) => item.id_produto === produto.id_produto);
+
+    if (itemExistente) {
+        itemExistente.quantidade += 1;
+    } else {
+        carrinho.push({
+            id_produto: produto.id_produto,
+            descricao_produto: produto.descricao_produto,
+            caminho_da_imagem: produto.caminho_da_imagem,
+            valor_unitario: produto.valor_unitario,
+            quantidade: 1
+        });
+    }
+
+    salvarCarrinho(carrinho);
+    alert(`"${produto.descricao_produto}" adicionado ao carrinho!`);
+}
+
 //FILTRANDO AS SEÇÕES COM A COLEÇÃO map
 const listarSecoes = () => {
-        //CRIANDO A COLEÇÃO MAP
     const secoesFiltrada = new Map()
 
-    //PECORRENDO O ARRAY PRODUTOS E FILTRANDO AS SEÇÕES
     produtos.forEach((elem, i) => {
-        //CRIANDO A CHAVE E O VALOR DA COLEÇÃO MAP A PARTIR DO ID DA SEÇÃO DA LISTA DE PRODUTOS
         secoesFiltrada.set(elem.id_secao, elem)
     })
 
-    //CONVERTENDO O MAP EM ARRAY
     const secoesMenu = Array.from(secoesFiltrada.values())
 
-    //RETORNADO O ARRAY CONVERTIDO
     return secoesMenu
 }
 
 //MONTANDO OS LINKS SEÇÕES
 const montarSecoes = () => {
-    //PEGANDO O ELEMENTO DO DOM
     const ulMenu = document.querySelector('#menu-secoes')
-    //LIMPANDO O ELEMENTO ulMenu
     ulMenu.innerHTML = ''
 
-    //CRIANDO O LINK "TODOS" QUE MOSTRA O CATÁLOGO INTEIRO
     const liTodos = document.createElement('li')
     const aTodos = document.createElement('a')
     aTodos.setAttribute('href', '#')
@@ -41,27 +68,19 @@ const montarSecoes = () => {
     liTodos.appendChild(aTodos)
     ulMenu.appendChild(liTodos)
 
-    //PERCORRENDO O ARRAY DAS SEÇÕES FILTRADA
     listarSecoes().forEach((elem, i) => {
-        //CRIANDO O ELEMENTO li
         const liSecao = document.createElement('li')
 
-        //CRIANDO O ELEMENTO a
         const aSecao = document.createElement('a')
         aSecao.setAttribute('href', '#')
         aSecao.setAttribute('class', 'lnk-secao')
         aSecao.innerHTML = elem.nome_secao
 
-        //CAPTURANDO O CLICK DOS LINKS
         aSecao.addEventListener('click', () => {
-        //CHAMANDO A FUNÇÃO PRODUTOS FILTRADOS
             montandoCards(produtosFiltrados(elem.id_secao))
         })
 
-        //ADICIONANDO O ELEMENTO FILHO a NO ELEMENTO li
         liSecao.appendChild(aSecao)
-
-        //ADICIONANDO O ELEMENTO FILHO li NO ELEMENTO DO DOM ul
         ulMenu.appendChild(liSecao)
     })
 }
@@ -71,11 +90,10 @@ const produtosFiltrados = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao)
 }
 
-//FILTRANDO PRODUTOS 
+//MONTANDO CARDS
 const montandoCards = (objProdutos) => {
     section_cards.innerHTML = ''
 
-//MONTANDO CARDS
     objProdutos.forEach((elem, i) => {
         const divCard = document.createElement('div')
         divCard.setAttribute('class', 'card')
@@ -97,13 +115,20 @@ const montandoCards = (objProdutos) => {
         btnCard.setAttribute('class', 'btn-card')
         btnCard.innerHTML = 'Adicionar'
 
+        //CLIQUE NO BOTÃO ADICIONA O PRODUTO NO CARRINHO
+        btnCard.addEventListener('click', () => {
+            adicionarAoCarrinho(elem)
+        })
+
         divCard.appendChild(imgProduto)
         divCard.appendChild(h2Titulo)
         divCard.appendChild(h3Valor)
         divCard.appendChild(btnCard)
 
         section_cards.appendChild(divCard)
+
     })
+
 }
 
 //INICIALIZANDO A PÁGINA
