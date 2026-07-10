@@ -183,3 +183,26 @@ body{
     background-color: #d97a2e;
     color: var(--cor_branca);
 }
+
+/*ESTADO DE CARRINHO VAZIO*/
+#carrinho-vazio{
+    width: 100%;
+    text-align: center;
+    background-color: var(--cor_branca);
+    border-radius: 8px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.08);
+    padding: 60px 20px;
+    font-size: 1.2em;
+    letter-spacing: 1px;
+    color: #555;
+}
+
+#carrinho-vazio a{
+    display: inline-block;
+    margin-top: 20px;
+    color: var(--cor_botao01);
+    text-decoration: none;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    font-weight: bold;
+}
