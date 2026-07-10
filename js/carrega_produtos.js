@@ -6,7 +6,7 @@ const section_cards = document.querySelector('#cards')
 
 //FILTRANDO AS SEÇÕES COM A COLEÇÃO map
 const listarSecoes = () => {
-    //CRIANDO A COLEÇÃO MAP
+        //CRIANDO A COLEÇÃO MAP
     const secoesFiltrada = new Map()
 
     //PECORRENDO O ARRAY PRODUTOS E FILTRANDO AS SEÇÕES
@@ -20,7 +20,6 @@ const listarSecoes = () => {
 
     //RETORNADO O ARRAY CONVERTIDO
     return secoesMenu
-
 }
 
 //MONTANDO OS LINKS SEÇÕES
@@ -55,7 +54,7 @@ const montarSecoes = () => {
 
         //CAPTURANDO O CLICK DOS LINKS
         aSecao.addEventListener('click', () => {
-            //CHAMANDO A FUNÇÃO PRODUTOS FILTRADOS
+        //CHAMANDO A FUNÇÃO PRODUTOS FILTRADOS
             montandoCards(produtosFiltrados(elem.id_secao))
         })
 
@@ -65,18 +64,18 @@ const montarSecoes = () => {
         //ADICIONANDO O ELEMENTO FILHO li NO ELEMENTO DO DOM ul
         ulMenu.appendChild(liSecao)
     })
-
 }
 
-//FILTRANDO PRODUTOS 
+//FILTRANDO PRODUTOS POR SEÇÃO
 const produtosFiltrados = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao)
 }
 
-//MONTANDO CARDS
+//FILTRANDO PRODUTOS 
 const montandoCards = (objProdutos) => {
     section_cards.innerHTML = ''
 
+//MONTANDO CARDS
     objProdutos.forEach((elem, i) => {
         const divCard = document.createElement('div')
         divCard.setAttribute('class', 'card')
@@ -104,11 +103,22 @@ const montandoCards = (objProdutos) => {
         divCard.appendChild(btnCard)
 
         section_cards.appendChild(divCard)
-
     })
-
 }
 
 //INICIALIZANDO A PÁGINA
 montarSecoes()
 montandoCards(produtos)
+
+//BUSCA EM TEMPO REAL PELO NOME DO PRODUTO
+const inputPesquisa = document.querySelector('#input-pesquisa')
+
+inputPesquisa.addEventListener('input', () => {
+    const termo = inputPesquisa.value.toLowerCase().trim()
+
+    const produtosEncontrados = produtos.filter(elem =>
+        elem.descricao_produto.toLowerCase().includes(termo)
+    )
+
+    montandoCards(produtosEncontrados)
+})
