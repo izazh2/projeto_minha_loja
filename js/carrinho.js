@@ -1,37 +1,22 @@
-//ARRAY EM MEMÓRIA COM OS ITENS DO CARRINHO
-//(pré-carregado com os 3 itens de exemplo; troque por dados vindos do backend/localStorage quando integrar)
-let carrinho = [
-    {
-        id_produto: 1,
-        descricao_produto: "Roupa Navalha",
-        caminho_da_imagem: "../imagem/imagem01.jpg",
-        valor_unitario: 500.00,
-        quantidade: 1
-    },
-    {
-        id_produto: 2,
-        descricao_produto: "Colar de Contas",
-        caminho_da_imagem: "../imagem/imagem04.jpg",
-        valor_unitario: 350.00,
-        quantidade: 1
-    },
-    {
-        id_produto: 3,
-        descricao_produto: "Torso / Fita",
-        caminho_da_imagem: "../imagem/imagem05.jpg",
-        valor_unitario: 220.00,
-        quantidade: 1
-    }
-];
+//CHAVE USADA NO localStorage (a mesma usada em carrega_produtos.js)
+const CHAVE_CARRINHO = 'carrinho_atelie_ode';
 
 //VALOR FIXO DE FRETE (troque pela regra real de cálculo quando integrar com API de CEP)
 const VALOR_FRETE_PADRAO = 25.00;
+
+//LENDO O CARRINHO DO localStorage (COMEÇA VAZIO SE NUNCA FOI SALVO)
+let carrinho = JSON.parse(localStorage.getItem(CHAVE_CARRINHO)) || [];
 
 //PEGANDO ELEMENTOS DO DOM
 const listaItens = document.querySelector('#lista-itens');
 const elValorTotal = document.querySelector('#valor-total');
 const elValorFrete = document.querySelector('#valor-frete');
 const elTotalPagar = document.querySelector('#total-pagar');
+
+//SALVANDO O CARRINHO NO localStorage
+const salvarCarrinho = () => {
+    localStorage.setItem(CHAVE_CARRINHO, JSON.stringify(carrinho));
+}
 
 //FORMATANDO NÚMERO PARA MOEDA BRASILEIRA
 const formatarMoeda = (valor) => {
@@ -108,6 +93,7 @@ const alterarQuantidade = (idProduto, novaQuantidade) => {
     //NÃO DEIXA A QUANTIDADE FICAR MENOR QUE 1
     item.quantidade = novaQuantidade < 1 ? 1 : novaQuantidade;
 
+    salvarCarrinho();
     renderizarCarrinho();
 };
 
@@ -115,12 +101,12 @@ const alterarQuantidade = (idProduto, novaQuantidade) => {
 const removerItem = (idProduto) => {
     carrinho = carrinho.filter((elem) => elem.id_produto !== Number(idProduto));
 
+    salvarCarrinho();
     renderizarCarrinho();
 };
 
 //LIGANDO OS EVENTOS DE CADA ITEM RENDERIZADO (BOTÕES + / - / ✕ E INPUT DE QUANTIDADE)
 const ativarEventosDosItens = () => {
-    //BOTÕES DE DIMINUIR QUANTIDADE
     document.querySelectorAll('.btn-menos').forEach((botao) => {
         botao.addEventListener('click', () => {
             const idProduto = botao.getAttribute('data-id');
@@ -129,7 +115,6 @@ const ativarEventosDosItens = () => {
         });
     });
 
-    //BOTÕES DE AUMENTAR QUANTIDADE
     document.querySelectorAll('.btn-mais').forEach((botao) => {
         botao.addEventListener('click', () => {
             const idProduto = botao.getAttribute('data-id');
@@ -138,7 +123,6 @@ const ativarEventosDosItens = () => {
         });
     });
 
-    //DIGITANDO DIRETO NO CAMPO DE QUANTIDADE
     document.querySelectorAll('.qtd-item').forEach((input) => {
         input.addEventListener('change', () => {
             const idProduto = input.getAttribute('data-id');
@@ -146,7 +130,6 @@ const ativarEventosDosItens = () => {
         });
     });
 
-    //BOTÃO DE REMOVER ITEM
     document.querySelectorAll('.btn-remover').forEach((botao) => {
         botao.addEventListener('click', () => {
             const idProduto = botao.getAttribute('data-id');
