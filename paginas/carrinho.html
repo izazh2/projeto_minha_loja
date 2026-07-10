@@ -11,8 +11,6 @@
     <!--LINK PARA O ARQUIVO-->
     <link rel="stylesheet" href="../css/style_estrutura_paginas.css">
     <link rel="stylesheet" href="../css/style_carrinho.css">
-
-    <script src="../js/carrinho.js" type="module" defer></script>
 </head>
 <body>
     <main id="geral">
@@ -45,52 +43,7 @@
 
         <section id="carrinho-conteudo">
             <div id="lista-itens">
-
-                <div class="item-carrinho">
-                    <img src="../imagem/imagem01.jpg" alt="Roupa Navalha">
-                    <div class="item-info">
-                        <h4 class="item-nome">Roupa Navalha</h4>
-                        <p class="item-preco-unit">R$ 500,00 / unid.</p>
-                    </div>
-                    <div class="qtd-control">
-                        <button type="button" class="btn-qtd btn-menos">-</button>
-                        <input type="number" class="qtd-item" value="1" min="1">
-                        <button type="button" class="btn-qtd btn-mais">+</button>
-                    </div>
-                    <span class="valor-item">R$ 500,00</span>
-                    <button type="button" class="btn-remover" title="Remover item">✕</button>
-                </div>
-
-                <div class="item-carrinho">
-                    <img src="../imagem/imagem04.jpg" alt="Colar de Contas">
-                    <div class="item-info">
-                        <h4 class="item-nome">Colar de Contas</h4>
-                        <p class="item-preco-unit">R$ 350,00 / unid.</p>
-                    </div>
-                    <div class="qtd-control">
-                        <button type="button" class="btn-qtd btn-menos">-</button>
-                        <input type="number" class="qtd-item" value="1" min="1">
-                        <button type="button" class="btn-qtd btn-mais">+</button>
-                    </div>
-                    <span class="valor-item">R$ 350,00</span>
-                    <button type="button" class="btn-remover" title="Remover item">✕</button>
-                </div>
-
-                <div class="item-carrinho">
-                    <img src="../imagem/imagem05.jpg" alt="Torso / Fita">
-                    <div class="item-info">
-                        <h4 class="item-nome">Torso / Fita</h4>
-                        <p class="item-preco-unit">R$ 220,00 / unid.</p>
-                    </div>
-                    <div class="qtd-control">
-                        <button type="button" class="btn-qtd btn-menos">-</button>
-                        <input type="number" class="qtd-item" value="1" min="1">
-                        <button type="button" class="btn-qtd btn-mais">+</button>
-                    </div>
-                    <span class="valor-item">R$ 220,00</span>
-                    <button type="button" class="btn-remover" title="Remover item">✕</button>
-                </div>
-
+                <!-- Preenchido dinamicamente por js/carrinho.js -->
             </div>
 
             <aside id="resumo-carrinho">
@@ -101,12 +54,12 @@
                     <span>VALOR TOTAL</span>
                     <strong id="valor-total">R$ 0,00</strong>
                 </div>
-                
+
                 <div class="resumo-linha valor-frete-box">
                     <span>VALOR FRETE</span>
                     <strong id="valor-frete">R$ 0,00</strong>
                 </div>
-                
+
                 <div class="resumo-linha total-pagar-box">
                     <span>TOTAL A PAGAR</span>
                     <strong id="total-pagar">R$ 0,00</strong>
@@ -135,12 +88,10 @@
                 <img src="../imagem/icones/visa.png" alt="Visa">
                 <img src="../imagem/icones/master_card.png" alt="Mastercard">
             </div>
-
-            <div id="lista-itens">
-                <!-- Preenchido dinamicamente por js/carrinho.js -->
-            </div>
         </footer>
 
     </main>
+
+    <script src="../js/carrinho.js" type="module" defer></script>
 </body>
 </html>
