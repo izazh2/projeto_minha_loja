@@ -90,6 +90,18 @@ const produtosFiltrados = (idSecao) => {
     return produtos.filter(elem => elem.id_secao === idSecao)
 }
 
+//FILTRANDO PELO INPUT
+//PEGANDO O INPUT DO DOM
+const inputPesquisa = document.querySelector('#pesquisa')
+
+//CAPTURANDO O EVENTO input
+inputPesquisa.addEventListener('input',(evt) => {
+    //CAPTURANDO O TEXTO DO INPUT E O DEIXANDO-O EM MINUSCULO NA VARIAVEL  txtInput
+    let txtInput = evt.target.values().toLowerCase()
+
+    montandoCards(produtos.filter(elem => elem.descricao_produto.toLowerCase().includes(txtInput)))
+})
+
 //MONTANDO CARDS
 const montandoCards = (objProdutos) => {
     section_cards.innerHTML = ''
@@ -134,16 +146,3 @@ const montandoCards = (objProdutos) => {
 //INICIALIZANDO A PÁGINA
 montarSecoes()
 montandoCards(produtos)
-
-//BUSCA EM TEMPO REAL PELO NOME DO PRODUTO
-const inputPesquisa = document.querySelector('#input-pesquisa')
-
-inputPesquisa.addEventListener('input', () => {
-    const termo = inputPesquisa.value.toLowerCase().trim()
-
-    const produtosEncontrados = produtos.filter(elem =>
-        elem.descricao_produto.toLowerCase().includes(termo)
-    )
-
-    montandoCards(produtosEncontrados)
-})
