@@ -132,6 +132,10 @@ const montandoCards = (objProdutos) => {
             adicionarAoCarrinho(elem)
         })
 
+       btnCard.addEventListener('click', () => {
+        window.location.href = "/paginas/carrinho.html"
+       })
+
         divCard.appendChild(imgProduto)
         divCard.appendChild(h2Titulo)
         divCard.appendChild(h3Valor)
