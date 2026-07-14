@@ -11,8 +11,18 @@ const montaTelaCarrinho = () =>{
         <p class='descricao'>${elem.descricao_produto} </p> 
         <p class='vlr-unitario>${elem.valor_unitario}</p>
         <input type="number" name='quant${i}' id='quant${i}' class="input-item" value=${1}> 
-        <p class="tot-item">${elem.valor_unitatio * 1} </p>
-        <img scr+"../imagens/icones/remover.png" alt="" class="img-remover">`
+        <p class="tot-item">${elem.valor_unitatio * 1} </p>`
+
+        const imgRemover = document.createElement('img')
+        imgRemover.setAttribute('src', '../imagen/icones/remover.png')
+        imgRemover.setAttribute('alt', 'Remover')
+        imgRemover.setAttribute('class','img-remover')
+
+        imgRemover.addEventListener('click'), () => {
+
+        } 
+
+        sectionItem.addEventListener(imgRemover)
 
         sectionItensCarrinho.appendChild(sectionItem)
         });
