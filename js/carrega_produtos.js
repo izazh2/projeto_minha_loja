@@ -1,6 +1,9 @@
 //IMPORTANDO O ARRAY DOS PRODUTOS
 import { produtos } from "./produtos.js";
 
+//IMPORTANDO O A ARROW FUNCTION addItem
+import { addItem } from "./carrinho.js";
+
 //CHAVE USADA NO localStorage
 const CHAVE_CARRINHO = 'carrinho_atelie_ode';
 
@@ -133,7 +136,11 @@ const montandoCards = (objProdutos) => {
         })
 
        btnCard.addEventListener('click', () => {
-        window.location.href = "/paginas/carrinho.html"
+         //ADICIONADO UM OBJETO NO CARRINHO
+         addItem(elem)
+         
+         //REDIRECIONA PARA PÁGINA carrinho.html
+         window.location.href = "/paginas/carrinho.html"
        })
 
         divCard.appendChild(imgProduto)
