@@ -230,3 +230,65 @@ body{
     font-weight: bold;
 }
 
+/*ITEM DO CARRINHO (classes geradas por monta_tela_carrinho.js)*/
+#lista-itens .item{
+    width: 100%;
+    background-color: var(--cor_branca);
+    border-radius: 8px;
+    box-shadow: 0px 1px 6px rgba(0, 0, 0, 0.08);
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    gap: 20px;
+}
+
+#lista-itens .item img{
+    width: 70px;
+    height: 70px;
+    object-fit: cover;
+    object-position: center;
+    border-radius: 6px;
+    flex-shrink: 0;
+}
+
+.descricao{
+    flex: 1;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: 0.95em;
+    color: #333;
+}
+
+.vlr-unitario{
+    width: 90px;
+    text-align: right;
+    color: #777;
+    font-size: 0.9em;
+}
+
+.input-item{
+    width: 50px;
+    height: 34px;
+    text-align: center;
+    border: 1px solid var(--cor_principal);
+    border-radius: 6px;
+    font-size: 0.9em;
+}
+
+.tot-item{
+    width: 100px;
+    text-align: right;
+    font-weight: bold;
+}
+
+.img-remover{
+    width: 22x;
+    height: 22px;
+    cursor: pointer;
+    flex-shrink: 0;
+    opacity: 0.7;
+}
+
+.img-remover:hover{
+    opacity: 1;
+}
