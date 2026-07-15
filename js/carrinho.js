@@ -20,6 +20,7 @@ const fObjItem = (objProduto) => {
 }
 
 //PEGANDO O INDICE DO ARRAY
+console.log("indice do array ->>> ",itensCarrinho.findIdex(elem => elem.id_produto == 2))
 
 //FUNÇÃO PARA ADCIONAR O ITEM NO ARRAY
 const addItem = (objItem) => {
