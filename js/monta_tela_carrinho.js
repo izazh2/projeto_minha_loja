@@ -2,7 +2,7 @@ import { listItens, removeriItem } from "./carrinho.js";
 //MONTANDO A TELA CARRINHO
 const montaTelaCarrinho = () =>{
     //PEGANDO ELEMENTOS DO DOM
-    const sectionItensCarrinho = document.querySelector('#itens-carrinho')
+    const sectionItensCarrinho = document.querySelector('#lista-itens')
 
     listItens().forEach(elem => {
         const sectionItem = document.createElement('section')
