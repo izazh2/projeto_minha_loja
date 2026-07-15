@@ -19,12 +19,20 @@ const fObjItem = (objProduto) => {
     return item
 }
 
-//PEGANDO O INDICE DO ARRAY
-console.log("indice do array ->>> ",itensCarrinho.findIdex(elem => elem.id_produto == 2))
+//PEGANDO O INDICE DO ARRAY (CORRIGIDO: findIndex, não findIdex)
+console.log("indice do array ->>> ", itensCarrinho.findIndex(elem => elem.id_produto == 2))
 
-//FUNÇÃO PARA ADCIONAR O ITEM NO ARRAY
+//FUNÇÃO PARA ADCIONAR O ITEM NO ARRAY (AGORA SOMA QUANTIDADE SE JÁ EXISTIR)
 const addItem = (objItem) => {
-    itensCarrinho.push(fObjItem(objItem))
+    const indice = itensCarrinho.findIndex(elem => elem.id_produto === objItem.id_produto)
+
+    if (indice === -1) {
+        //PRODUTO NOVO NO CARRINHO
+        itensCarrinho.push(fObjItem(objItem))
+    } else {
+        //PRODUTO JÁ EXISTE, SÓ SOMA 1 NA QUANTIDADE
+        itensCarrinho[indice].quantidade += 1
+    }
 
     localStorage.setItem('itensSessao', JSON.stringify(itensCarrinho))
     //sessionStorage.setItem('itensSessao', JSON.stringify(itensCarrinho))
