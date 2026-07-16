@@ -29,6 +29,25 @@ const montaTelaCarrinho = () =>{
 
         sectionItensCarrinho.appendChild(sectionItem)
     });
+
+    //CALCULANDO E MOSTRANDO O RESUMO (VALOR TOTAL, FRETE E TOTAL A PAGAR)
+    atualizarResumo()
+}
+
+//SOMANDO OS ITENS DO CARRINHO E ESCREVENDO NO RESUMO
+const atualizarResumo = () => {
+    const itens = listItens()
+
+    const valorTotal = itens.reduce((acumulado, elem) => {
+        return acumulado + (elem.valor_unitario * elem.quantidade)
+    }, 0)
+
+    const valorFrete = itens.length > 0 ? 25 : 0
+    const totalAPagar = valorTotal + valorFrete
+
+    document.querySelector('#valor-total').innerHTML = `R$ ${valorTotal.toFixed(2).replace('.', ',')}`
+    document.querySelector('#valor-frete').innerHTML = `R$ ${valorFrete.toFixed(2).replace('.', ',')}`
+    document.querySelector('#total-pagar').innerHTML = `R$ ${totalAPagar.toFixed(2).replace('.', ',')}`
 }
 
 const removerItemCarrinho = (pos) => {
