@@ -1,13 +1,13 @@
 //PEGANDO O INPUT CEP DO DOM
-const inputCep = document.querySelector9('#cep')
+const inputCep = document.querySelector('#cep')
 
 //CAPTURANDO O EVENTO AO PERDER O FOCO
-inputCep.addEventListener('change',(evt) =>{
+inputCep.addEventListener('change', (evt) => {
     //PEGANDO OS NÚMEROS DO INPUT NÃO PERMITINDO OUTRO TIPO DE DADOS QUE NÃO SEJA DÍGITO
-    const numCep = evt.target.value.replace(/\D/g,'')
+    const numCep = evt.target.value.replace(/\D/g, '')
 
     //VERIFIVA SE SÃO 8(OITO) DÍGITOS
-    if (numCep != 8){
+    if (numCep.length != 8){
         alert('CEP INVÁlido !!!')
         return
     }
@@ -20,17 +20,20 @@ inputCep.addEventListener('change',(evt) =>{
 const buscaDadosCep = async (cep) =>{
     //TENTA BUSCAS OS DADOS NO VIACEP
     try{
+
+        //BUSCA DADOS VIA CEP
         const response = await fetch(`https://viacep.com.br/ws/${cep}/json/`)
 
         //CONVERTE OS DADOS NO FORMATO json
-        const dadosEndereco = response.json()
+        const dadosEndereco = await response.json()
+        console.log(dadosEndereco)
 
         //CHAMA A FUNÇÃO exibeDados
         exibeDados(dadosEndereco)
 
         //CASO HAJA ALGUM ERRO É CAPTURADOS PELO  catch
     }catch(erro){
-        console.log(erro.message)
+        console.log('ERRO APRENSENTADO',erro.message)
     }
 }
 
@@ -47,15 +50,25 @@ const exibeDados = (objDados) => {
     //PEGA A DIV PAI DOS ELEMENTOS DO ENDEREÇO
     const divEndereco = document.querySelector('#div-dados-endereco')
 
-    //REMOVE A DIV 
-    divEndereco.classList.recome('oculto')
+    //REMOVE A DIV O CLASS OCULTO 
+    divEndereco.classList.remove('oculto')
 
-    for (let chave in objDados){
-    //ATRIBUI O VALOR AO INPUT
-    campos[chave].value = objDados[chave]
+   //PECORRE O  OBJETO, NO FORMATO JSON, DO VIDA CEP
+    for (let chave in campos){
 
-    //BLOQUEIA OS INPUTS. NÃO PERMITE QUE O USUARIO APAGUE OS VALORES
-    campos[chave].disabled = objDados[chave]
+      //ATRIBUI O VALOR AO INPUT
+      campos[chave]= objDados[chave]
+
+      //BLOQUEIA OS INPUTS. NÃO PERMITE QUE O USUARIO APAGUE OS VALORES
+      campos[chave].disabled = objDados[chave]
+   }
+
+   document.querySelector('#num-residencial').focus()
 }
-}
 
+formPessoa.addEventListener('reset', () => {
+    //PEGA A DIV PAI DOS ELEMENTOS DO ENDEREÇO
+    const divEndereco = document.querySelector('#div-dados-endereco')
+    //REMOVE  DA DIV A CLASS OCULTO
+    divEndereco.classList.add('oculto')
+})
