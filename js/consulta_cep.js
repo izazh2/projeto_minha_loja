@@ -8,7 +8,7 @@ inputCep.addEventListener('change', (evt) => {
 
     //VERIFIVA SE SÃO 8(OITO) DÍGITOS
     if (numCep.length != 8){
-        alert('CEP INVÁlido !!!')
+        alert('CEP INVÁLIDO !!!')
         return
     }
 
@@ -63,7 +63,7 @@ const exibeDados = (objDados) => {
       campos[chave].disabled = objDados[chave]
    }
 
-   document.querySelector('#num-residencial').focus()
+   document.querySelector('#num-residencia').focus()
 }
 
 formPessoa.addEventListener('reset', () => {
