@@ -39,7 +39,7 @@ const buscaDadosCep = async (cep) =>{
 
 //OBJETO LITERAL CAMPOS QUE CRIA CADA CHAVE SEJA UM INPUT DO DOM
 const campos = {
-    logradorou: document.querySelector('#logradouro'),
+    logradouro: document.querySelector('#logradouro'),
     bairro : document.querySelector ('#bairro'),
     localidade: document.querySelector ('#localidade'),
     uf : document.querySelector ('#uf')
@@ -57,7 +57,7 @@ const exibeDados = (objDados) => {
     for (let chave in campos){
 
       //ATRIBUI O VALOR AO INPUT
-      campos[chave]= objDados[chave]
+      campos[chave].value= objDados[chave]
 
       //BLOQUEIA OS INPUTS. NÃO PERMITE QUE O USUARIO APAGUE OS VALORES
       campos[chave].disabled = objDados[chave]
@@ -65,6 +65,8 @@ const exibeDados = (objDados) => {
 
    document.querySelector('#num-residencia').focus()
 }
+ //PEGANDO O FORMULARIO DO DOM
+const formPessoa = document.querySelector('#form-pessoa')
 
 formPessoa.addEventListener('reset', () => {
     //PEGA A DIV PAI DOS ELEMENTOS DO ENDEREÇO
